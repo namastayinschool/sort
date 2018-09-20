@@ -22,13 +22,20 @@ int SortAnalysis(auto& A )
       while (j >= 0 and A[j] > v )
         {
           count = count + 1;
-          A[j + 1] = A[j];
-          j = j -1;
+          if (A[j] > v)
+	  {
+		A[j + 1] = A[j] ;         		
+		j = j -1;
+	} //endif
+	else
+break;
         } 
      
      A[j + 1] = v;
  
    }
+
+return count;
   
   return count;
 }
